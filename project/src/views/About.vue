@@ -1,5 +1,16 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+    <div class="home">
+        <Dashboard01/>
+    </div>
 </template>
+
+<script>
+import { Dashboard01 } from '@/main';
+
+export default {
+    name: 'Home',
+    components: {
+        Dashboard01
+    },
+};
+</script>

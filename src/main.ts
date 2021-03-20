@@ -1,12 +1,27 @@
 import Vue from 'vue';
-import App from './App.vue';
-import router from './router';
-import store from './store';
+import setPresetParams from '@/preset/index';
+import { Dashboard01, Dashboard02 } from './views/index';
+import {
+    Graph01,
+    Graph02,
+    Graph03
+} from './components';
 
-Vue.config.productionTip = false;
+const install: any = (v: typeof Vue) => {
+    if (install.installed) return;
+    v.component('a-dashboard-01', Dashboard01);
+    v.component('a-dashboard-02', Dashboard02);
+};
 
-new Vue({
-  router,
-  store,
-  render: (h) => h(App),
-}).$mount('#app');
+export {
+    Dashboard01,
+    Dashboard02,
+    Graph01,
+    Graph02,
+    Graph03,
+    setPresetParams
+};
+
+export default {
+    install,
+};
