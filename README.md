@@ -1,4 +1,4 @@
-# aqara-component-template
+# template-component
 
 ## Project setup
 ```
