@@ -8,6 +8,9 @@ module.exports = {
         '@vue/airbnb',
         '@vue/typescript/recommended',
     ],
+    globals: {
+        THREE: true
+    },
     parserOptions: {
         ecmaVersion: 2020,
     },
