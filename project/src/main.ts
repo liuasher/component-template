@@ -3,7 +3,7 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
-import { Graph02, Graph03, Dashboard01 } from '../dist/dashboard.common.js';
+// import { Graph02, Graph03, Dashboard01 } from '../dist/dashboard.common.js';
 
 Vue.config.productionTip = false;
 
