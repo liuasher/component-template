@@ -1,5 +1,5 @@
 module.exports = {
-    // entry: {
-    //     main: './project/src/main'
-    // }
+  // entry: {
+  //     main: './project/src/main'
+  // }
 };

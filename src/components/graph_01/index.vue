@@ -1,87 +1,87 @@
 <template>
-  <div class="graph" id="graph1-container">
-    我是Graph_01
-  </div>
+  <div class="graph" id="graph1-container">我是Graph_01</div>
 </template>
 
 <script lang="ts">
-
-import { Chart } from '@antv/g2';
+import { Chart } from "@antv/g2";
 
 export default {
-    name: 'Graph01',
-    mounted() {
-       const data = [
-  { type: '1-3秒', value: 0.16 },
-  { type: '4-10秒', value: 0.125 },
-  { type: '11-30秒', value: 0.24 },
-  { type: '31-60秒', value: 0.19 },
-  { type: '1-3分', value: 0.22 },
-  { type: '3-10分', value: 0.05 },
-  { type: '10-30分', value: 0.01 },
-  { type: '30+分', value: 0.015 },
-];
+  name: "Graph01",
+  mounted() {
+    const data = [
+      { type: "1-3秒", value: 0.16 },
+      { type: "4-10秒", value: 0.125 },
+      { type: "11-30秒", value: 0.24 },
+      { type: "31-60秒", value: 0.19 },
+      { type: "1-3分", value: 0.22 },
 
-const chart = new Chart({
-  container: 'graph1-container',
-  autoFit: true,
-  height: 500,
-});
-chart.data(data);
-chart.scale('value', {
-  nice: true,
-});
-chart.axis('type', {
-  tickLine: null,
-});
+      { type: "3-10分", value: 0.05 },
 
-chart.axis('value', {
-  label: {
-    formatter: (val) => `${+val * 100}%`,
-  },
-});
+      { type: "10-30分", value: 0.01 },
 
-chart.tooltip({
-  showMarkers: false,
-});
-chart.interaction('element-active');
+      { type: "30+分", value: 0.015 },
+    ];
 
-chart.legend(false);
-chart
-  .interval({
-    background: {
-      style: {
-        radius: 8,
+    const chart = new Chart({
+      container: "graph1-container",
+      autoFit: true,
+      height: 500,
+    });
+    chart.data(data);
+    chart.scale("value", {
+      nice: true,
+    });
+    chart.axis("type", {
+      tickLine: null,
+    });
+
+    chart.axis("value", {
+      label: {
+        formatter: (val) => `${+val * 100}%`,
       },
-    },
-  })
-  .position('type*value')
-  .color('type', (val) => {
-    if (val === '10-30分' || val === '30+分') {
-      return '#ff4d4f';
-    }
-    return '#2194ff';
-  })
-  .label('value', {
-    content: (originData) => {
-      const val = parseFloat(originData.value);
-      if (val < 0.05) {
-        return `${(val * 100).toFixed(1)}%`;
-      }
-    },
-    offset: 10,
-  });
+    });
 
-chart.render();
-    }
+    chart.tooltip({
+      showMarkers: false,
+    });
+    chart.interaction("element-active");
+
+    chart.legend(false);
+    chart
+      .interval({
+        background: {
+          style: {
+            radius: 8,
+          },
+        },
+      })
+      .position("type*value")
+      .color("type", (val) => {
+        if (val === "10-30分" || val === "30+分") {
+          return "#ff4d4f";
+        }
+        return "#2194ff";
+      })
+      .label("value", {
+        content: (originData) => {
+          const val = parseFloat(originData.value);
+          if (val < 0.05) {
+            return `${(val * 100).toFixed(1)}%`;
+          }
+        },
+        offset: 10,
+      });
+
+    chart.render();
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.graph{
-    width: 400px;
-    height: 200px;
-    border: solid 1px #ffe793;
+.graph {
+  width: 400px;
+  height: 200px;
+  border: solid 1px #ffe793;
 }
 </style>
