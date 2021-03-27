@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard-01">
-    我是开发中中引入的dashboard
+    我是开发中中引入的dashboard~~~
     <Graph01 />
     <Graph02 />
     <Graph01 />
@@ -8,14 +8,17 @@
 </template>
 
 <script>
-import { Graph01, Graph02 } from '../components/index';
+import { Graph01, Graph02 } from "../components/index";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     Graph01,
-    Graph02
-  }
+    Graph02,
+  },
+  mounted() {
+    // console.log(1111111111111);
+  },
 };
 </script>
 <style scoped lang="scss">
