@@ -35,12 +35,12 @@ export default {
     const twoPi = Math.PI * 2;
     const data = {
       radius: 10,
-      widthSegments: 8,
-      heightSegments: 6,
+      widthSegments: 6,
+      heightSegments: 3,
       phiStart: 0,
-      phiLength: twoPi,
-      thetaStart: 0,
-      thetaLength: Math.PI,
+      phiLength: 2 * Math.PI,
+      thetaStart: (1 * Math.PI) / 2,
+      thetaLength: (1 * Math.PI) / 2,
     };
     const geometry = new THREE.SphereGeometry(
       data.radius,
@@ -104,16 +104,16 @@ export default {
 
     camera.position.x = 0;
     camera.position.y = 0;
-    camera.position.z = 20;
+    camera.position.z = 40;
     /**
      *
      *
      */
     function render() {
-      requestAnimationFrame(render);
+      // requestAnimationFrame(render);
 
-      group.rotation.x += 0.005;
-      group.rotation.y += 0.005;
+      // group.rotation.x += 0.005;
+      // group.rotation.y += 0.005;
 
       renderer.render(scene, camera);
     }
